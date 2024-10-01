@@ -94,6 +94,7 @@ function fillBuild() {
       "src/images/*.*",
       "src/images/*.svg",
       "src/fonts/*.*",
+      "src/sounds/*.*",
     ],
     {
       base: "src",
