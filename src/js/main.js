@@ -23,9 +23,9 @@ function rundomize() {
 }
 
 let emptyIndex = 29;
-const soundMove = new Audio("../sounds/move.mp3");
-const soundStart = new Audio("../sounds/start.mp3");
-const soundFinish = new Audio("../sounds/finish.mp3");
+const soundMove = new Audio("sounds/move.mp3");
+const soundStart = new Audio("sounds/start.mp3");
+const soundFinish = new Audio("sounds/finish.mp3");
 
 wrapper.addEventListener("click", (e) => {
   const gem = e.target.closest("button");
