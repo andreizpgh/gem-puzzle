@@ -84,9 +84,6 @@ h1 {
 			&:hover {
 				background-color: $almond;
 			}
-			&:disabled {
-				color: black;
-			}
 		}
 		.empty {
 			z-index: -99;

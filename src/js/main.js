@@ -27,15 +27,16 @@ const soundMove = new Audio("sounds/move.mp3");
 const soundStart = new Audio("sounds/start.mp3");
 const soundFinish = new Audio("sounds/finish.mp3");
 
+let isMoving = false;
 wrapper.addEventListener("click", (e) => {
   const gem = e.target.closest("button");
-
-  if (gem && gem.tagName === "BUTTON" && state !== "ready") {
-    gem.disabled = true;
-    setTimeout(() => {
-      gem.disabled = false;
-      checkProgress();
-    }, 200);
+  if (
+    isMoving == false &&
+    gem &&
+    gem.tagName === "BUTTON" &&
+    state !== "ready"
+  ) {
+    isMoving = true;
 
     let index;
     Object.entries(gemsCopy).map((g, i) => {
@@ -97,6 +98,7 @@ wrapper.addEventListener("click", (e) => {
         soundMove.play();
       }
     }
+
     switch (true) {
       case index === 0:
         moveRight(gem);
@@ -142,6 +144,12 @@ wrapper.addEventListener("click", (e) => {
         break;
     }
   }
+
+  checkProgress();
+
+  setTimeout(() => {
+    isMoving = false;
+  }, 300);
 });
 
 const timer = document.getElementById("time");
