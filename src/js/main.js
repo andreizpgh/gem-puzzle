@@ -1,3 +1,5 @@
+screen.orientation.lock();
+
 const wrapper = document.querySelector(".puzzle__inside");
 const gems = document.querySelectorAll("button");
 const buttonSize = gems[0].offsetWidth;
@@ -142,9 +144,10 @@ wrapper.addEventListener("click", (e) => {
         moveDown(gem);
         break;
     }
+
+    checkProgress();
   }
 
-  checkProgress();
   setTimeout(() => {
     gem.disabled = false;
   }, 400);
