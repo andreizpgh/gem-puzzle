@@ -149,7 +149,7 @@ wrapper.addEventListener("click", (e) => {
 
   setTimeout(() => {
     isMoving = false;
-  }, 300);
+  }, 315);
 });
 
 const timer = document.getElementById("time");
